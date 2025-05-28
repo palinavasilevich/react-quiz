@@ -30,7 +30,11 @@ export const Answers = ({ answers, selectedAnswer, answerState, onSelect }) => {
 
         return (
           <li key={index} className="answer">
-            <button onClick={() => onSelect(answer)} className={cssClass}>
+            <button
+              onClick={() => onSelect(answer)}
+              className={cssClass}
+              disabled={answerState !== ANSWER_STATE.unanswered}
+            >
               {answer}
             </button>
           </li>
